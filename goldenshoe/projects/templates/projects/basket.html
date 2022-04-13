@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h2>My Basket</h2>
+<br>
+<h3>Summary</h3>
+{% for item in basket %}
+<p>Product: {{product.title}}</p>
+<p>Quantity: {{item.basket_quantity}}</p>
+<p>Price: {{item.basket_value}}</p>
+<hr>
+{% endfor %}
+<p>Total: {{total}}</p>
+<a href="{% url 'shoes' %}" class="btn btn--sub btn--lg">Continue Shopping</a>
+<a href="{% url 'checkout' %}" class="btn btn--sub btn--lg">Checkout</a>
+<a href="{% url 'clear_basket' %}" class="btn btn--sub btn--lg">Clear Basket</a>
+<br>
+{% endblock content %}

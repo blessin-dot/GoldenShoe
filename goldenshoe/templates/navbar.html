@@ -1,0 +1,31 @@
+{% load static %}
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container container--narrow">
+      <a href="{%url 'projects'%}" class="header__logo">
+        <img src="{%static 'images/Goldenshoe_large.png' %}" width="400px" alt="GoldenShoe Logo" />
+      </a>
+      <nav class="header__nav">
+        <input type="checkbox" id="responsive-menu" />
+        <label for="responsive-menu" class="toggle-menu">
+          <span>Menu</span>
+          <div class="toggle-menu__lines"></div>
+        </label>
+        <ul class="header__menu">
+          <li class="header__menuItem"><a href="{% url 'projects' %}">Home</a></li>
+          <li class="header__menuItem">
+          <a href="{%url 'shoes' %}">Shoes</a></li>
+          <li class="header__menuItem"><a href="{% url 'info_page' %}">Info</a></li>
+          {% with anonymous='AnonymousUser'%}
+          {% if request.user == anonymous %}
+          <li class="header__menuItem"><a href="{%url 'login' %}" class="btn btn--sub">Login</a></li>
+          {% else %}
+          <li class="header__menuItem"><a href="{%url 'login' %}" class="btn btn--sub">{{request.user}}</a></li>
+          {% endif %}
+          {% endwith %}
+          <li class="header__menuItem"><a href="{%url 'logout' %}">Logout</a></li>
+          <li class="header__menuItem"><a href="{%url 'view_basket' %}" class="btn btn--sub">Basket</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>

@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<!-- Show list of shoes based on the category: men, women, kids -->
+<!-- Search Result: Shoes List -->
+
+<section class="projectsList">
+    <div class="container">
+      <div class="grid grid--three">
+          {% for project in projects %}
+          {% if project.stock_quantity != 0%}
+        <div class="column">
+          <div class="card project">
+            <a href="{%url 'project' project.id %}" class="project">
+              <img class="project__thumbnail" src="{{project.featured_image.url}}" alt="project thumbnail" />
+              <div class="card__body">
+                <h3 class="project__title">{{project.title}}</h3>
+                <p>£{{project.price}}</p>
+              </div>
+            </a>
+          </div>
+        </div >
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {% endblock content %}

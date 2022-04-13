@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h2>Welcome to our Refund page</h2>
+<br>
+<p>Please fill in the following fields to process your refund</p>
+<p>Reminder: Items that have been used won't be accepted</p>
+<div class="singleProject__info">
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="form-group col-md-2 mb-3">
+      <label for="order_number">Order ID:</label>
+      <input type="text" class="form-control" id="order_number" name="order_number">
+      <label for="return_reason">Return reason:</label>
+      <input type="text" class="form-control" id="return_reason" name="return_reason">
+      <label for="email_address">Email:</label>
+      <input type="text" class="form-control" id="email_address" name="email_address">
+      <br>
+      <input class="btn btn--sub btn--lg" type="submit" value="Submit" />
+    </div>
+    </form>
+  </div>
+
+<br>
+{% endblock content %}

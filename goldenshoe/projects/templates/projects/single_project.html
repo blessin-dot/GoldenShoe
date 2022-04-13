@@ -1,0 +1,54 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<img src="{{ project.featured_image.url }}" alt="">
+
+<!-- Main Section -->
+<main class="singleProject my-md">
+    <div class="container">
+      <div class="layout">
+        <div class="column column--1of3">
+
+        </div>
+        <div class="column column--2of3">
+          <h2 class="singleProject__title">{{project.title}}</h2>
+          <div style="font-weight: bold;" class="singleProject__info">
+            £ {{project.price}}
+          </div>
+          <br>
+          <div class="singleProject__info">
+            <form action="{% url 'add_basket' project.id%}" method="POST">
+              {% csrf_token %}
+              <div class="form-group col-md-2 mb-3">
+                {% for field in form %}
+
+              <label for="{{field.label}}">{{field.label}}:</label>
+              {{field}}
+              <br>
+              {% endfor %}
+              <input class="btn btn--sub btn--lg" type="submit" value="Add to Basket" />
+            </div>
+            </form>
+          </div>
+
+          <br>
+          <hr>
+          <div>
+            <h3 class="singleProject__subtitle">Description</h3>
+              {{project.description}}
+            </div>
+            <br>
+            <br>
+            <hr>
+            <div>
+              <h3 class="singleProject__subtitle">Date Delivery Estimation</h3>
+              Estimation Delivery Date: Please allow 2-3 working days for all UK deliveries
+            </div>
+            
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+{% endblock %}

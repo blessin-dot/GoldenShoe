@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h2>Your refund request for order {{order_id}} was successfully submitted</h2>
+<br>
+<p>Return reason: {{reason_id}}.
+    <br>
+    An email will be sent to you with the label and information.
+    <br>
+    Allow 5-10 working days to get your money back
+</p>
+<p><a href="{%url 'projects' %}">Return Back to Shopping</a></p>
+<br>
+{% endblock content %}

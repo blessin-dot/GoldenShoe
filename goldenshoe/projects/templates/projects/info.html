@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h2>Welcome to our Info page</h2>
+<br>
+<h3>Returns Policy</h3>
+<p>This is our return policy. If your item follows under the following categories: 
+    <ul>
+        <li>Incorrect Shoe size</li>
+        <li>Change my mind</li>
+        <li>Didn't like the colour</li>
+        <li>Other reasons</li>
+    </ul>
+    <br>
+    Fill in our return policy form that you can find <a href="{%url 'refund' %}">here</a>
+</p>
+<br>
+<p><span style="font-style: bold;">PLEASE:</span> The item has to be unused in order to process your refund</p>
+<br>
+<br>
+<h3>Delivery Estimation</h3>
+<p>For deliveries to the UK allow 2-3 working days for the item to get shipped and delivered. We offer free delivery</p>
+<p>For international deliveries allow 5-6 working days for it to get shipped and delivered. There will be £5 delivery fee</p>
+<br>
+<h3>Service Helpline</h3>
+<p>For any enquiries any enquiry, email us at goldenshoe@gmail.com or call us on 098675443</p>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h2>Login</h2>
+<br>
+<form action="" method="POST">
+    {% csrf_token %}
+      <div class="form-group col-md-5 mb-3">
+      <label for="username" name="username">Username:</label>
+      <input type="text" class="form-control" placeholder="username..." id="username" name="username">
+      <label for="password" name="password">Password:</label>
+      <input type="password" class="form-control" placeholder="password..." id="password" name="password">
+      <br>
+   
+      {% for message in messages %}
+      <p id="messages">{{message}}</p>
+      {% endfor %}
+      <input class="btn btn--sub btn--lg" type="submit" value="Sign In" />
+      <a href="{%url 'register' %}"  value="Already have an account">Don't have an account?</a>
+</form>
+
+<br>
+{% endblock content %}

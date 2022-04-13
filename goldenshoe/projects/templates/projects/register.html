@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h2>Register</h2>
+<br>
+{{form.errors}}
+<div class="singleProject__info">
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="form-group col-md-5 mb-3">
+        {% for field in form %}
+
+      <label for="{{field.label}}">{{field.label}}:</label>
+      {{field}}
+      <br>
+   
+      {% endfor %}
+      <ul>
+        <li>Your password must contain at least 8 characters</li>
+        <li>Your password can't be entirely numeric</li>
+        <li>Your password can't be too common</li>
+    </ul>
+      <input class="btn btn--sub btn--lg" type="submit" value="Sign Up" />
+      <a href="{%url 'login' %}"  value="Already have an account">Already have an account?</a>
+    </div>
+    </form>
+  </div>
+<br>
+{% endblock content %}

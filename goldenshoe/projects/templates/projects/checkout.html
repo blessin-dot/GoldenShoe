@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h2>Welcome to Checkout</h2>
+<br>
+<h3>Here is your Summary</h3>
+{% for item in basket %}
+<p>Product: {{product.title}}</p>
+<p>Quantity: {{item.basket_quantity}}</p>
+<p>Price: {{item.basket_value}}</p>
+<hr>
+{% endfor %}
+<p>Total: {{total}}</p>
+<br>
+<br>
+<h3>Payment and Delivery information</h3>
+<form action="" method="POST">
+    {% csrf_token %}
+<label for="">Card details:</label>
+<input type="text" name="card_details" id="card_details">
+<label for="">Delivery address:</label>
+<input type="text" name="delivery_address" id="delivery_address">
+<input  class="btn btn--sub btn--md" type="submit" value="Pay">
+</form>
+<br>
+{% endblock content %}
