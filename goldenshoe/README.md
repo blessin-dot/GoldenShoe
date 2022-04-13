@@ -1,8 +1,8 @@
-GoldenShoe E-commerce
+#GoldenShoe E-commerce
 
 Welcome to the repository for GoldenShoe. This project uses the Django web framework and follows the MVT (Model, View, Template) architecture.
 
-Command to run server
+##Command to run server
 1. cd goldenshoe
 2. source env/lib/activate
 3. python manage.py runserver
